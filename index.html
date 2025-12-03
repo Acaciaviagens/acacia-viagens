@@ -5,24 +5,28 @@
     <title>Acácia Viagens</title>
 
     <!-- CSS GLOBAL -->
-<link rel="stylesheet" href="assets/css/style.css?v=10">
+    <link rel="stylesheet" href="assets/css/style.css?v=20">
+
     <style>
-        /* Ajustes visuais específicos do HERO */
+        /* HERO */
         .hero {
             position: relative;
-            background-image: url('https://images.unsplash.com/photo-1500048993959-dc66d2d53361?w=1800&q=80&auto=format&fit=crop');
+            background-image: url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?ixlib=rb-4.0.3&w=1800&q=80&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             border-bottom: 6px solid #1A73E8;
         }
+
         .hero-overlay {
             background: rgba(0,0,0,0.45);
             padding: 60px 20px 120px 20px;
         }
+
         .hero-logo img {
-            height: 110px;
-            margin-left: 20px;
+            height: 120px;
+            margin-bottom: 25px;
         }
+
         .hero-title {
             font-size: 48px;
             font-weight: 900;
@@ -30,6 +34,7 @@
             color: white;
             text-shadow: 0px 3px 8px rgba(0,0,0,0.45);
         }
+
         .hero-sub {
             font-size: 22px;
             color: white;
@@ -37,11 +42,43 @@
             text-shadow: 0px 3px 8px rgba(0,0,0,0.45);
             margin-bottom: 25px;
         }
+
         .hero-buttons {
             margin-top: 20px;
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
+        }
+
+        /* CARDS DE SERVIÇOS */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #1A73E8;
+        }
+
+        .card p {
+            font-size: 16px;
+            opacity: 0.85;
         }
     </style>
 </head>
@@ -50,7 +87,7 @@
 
 <!-- MENU SUPERIOR -->
 <nav>
-    <img src="assets/img/logo.png" alt="Acácia Viagens" style="height:70px; vertical-align:middle; margin-right:25px;">
+    <img src="assets/img/logo.png" alt="Acácia Viagens" style="height:75px; vertical-align:middle; margin-right:25px;">
     <a href="index.html">Home</a>
     <a href="passagens.html">Passagens</a>
     <a href="hoteis.html">Hotéis</a>
@@ -80,23 +117,56 @@
             </p>
 
             <div class="hero-buttons">
-                <a class="btn" href="passagens.html" style="background:#FF7043;">Buscar Passagens</a>
-                <a class="btn" href="hoteis.html" style="background:#FFB300;">Hotéis & Resorts</a>
-                <a class="btn" href="passeios.html" style="background:#1A73E8;">Passeios & Experiências</a>
+                <a class="btn btn-orange" href="passagens.html">Buscar Passagens</a>
+                <a class="btn btn-orange" href="hoteis.html">Hotéis & Resorts</a>
+                <a class="btn btn-blue" href="passeios.html">Passeios & Experiências</a>
             </div>
         </div>
 
     </div>
 </header>
 
-<!-- SEÇÃO DE APRESENTAÇÃO -->
-<div class="container" style="padding:40px 0;">
+<!-- SEÇÃO 1 -->
+<div class="container">
     <h2>Planeje sua viagem com quem entende.</h2>
     <p>
         A Acácia Viagens conecta você aos melhores preços e serviços de viagem:
-        passagens aéreas, hotéis, seguro viagem, aluguel de carros, eSIM internacional
-        e experiências completas pelo mundo.
+        passagens aéreas, hotéis, pacotes, seguro viagem, aluguel de carros,
+        chip internacional e experiências completas pelo mundo.
     </p>
+
+    <!-- CARDS -->
+    <div class="cards">
+        <div class="card">
+            <h3>Passagens Aéreas</h3>
+            <p>As melhores tarifas nacionais e internacionais com suporte 24h.</p>
+        </div>
+
+        <div class="card">
+            <h3>Hotéis & Resorts</h3>
+            <p>Hospedagens no Brasil e no mundo com preços exclusivos.</p>
+        </div>
+
+        <div class="card">
+            <h3>Pacotes Completos</h3>
+            <p>Viaje como a CVC: pacotes prontos com hotel + voo + seguro.</p>
+        </div>
+
+        <div class="card">
+            <h3>Passeios</h3>
+            <p>Experiências incríveis em diversos destinos turísticos.</p>
+        </div>
+
+        <div class="card">
+            <h3>Chip Internacional</h3>
+            <p>Internet ilimitada em mais de 80 países.</p>
+        </div>
+
+        <div class="card">
+            <h3>Aluguel de Carros</h3>
+            <p>As melhores locadoras com preços promocionais.</p>
+        </div>
+    </div>
 </div>
 
 <!-- RODAPÉ PROFISSIONAL -->
@@ -105,8 +175,7 @@
 
         <div class="footer-col">
             <h4>Acácia Viagens</h4>
-            <p>Seu portal completo de turismo: passagens, hotéis, pacotes, seguro, chip internacional,
-            aluguel de carros e experiências pelo mundo.</p>
+            <p>Seu portal completo de turismo.</p>
         </div>
 
         <div class="footer-col">
