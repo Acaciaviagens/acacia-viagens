@@ -1,91 +1,115 @@
-/* ========= ACÁCIA VIAGENS - VISUAL TURÍSTICO VIBRANTE ========= */
+/* ============================
+   ACÁCIA VIAGENS – ESTILO OFICIAL
+   Cores: Azul (#1A73E8), Dourado (#FFB300), Laranja (#FF7043)
+   ============================ */
 
+/* GERAL */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: #F8F9FA;
+    background: #F4F6F9;
     color: #1A1A1A;
 }
 
-/* HEADER */
-header {
-    background: linear-gradient(135deg, #1A73E8, #4DA3FF);
-    padding: 40px 20px;
-    text-align: center;
-    color: white;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 42px;
-    font-weight: bold;
-    text-shadow: 0px 2px 6px rgba(0,0,0,0.25);
-}
-
-/* MENU */
+/* MENU SUPERIOR */
 nav {
     background: #1A73E8;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    padding: 12px 20px;
+    display: flex;
+    gap: 22px;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+nav img {
+    height: 55px;
 }
 
 nav a {
-    text-decoration: none;
     color: white;
-    margin: 0 15px;
+    text-decoration: none;
     font-size: 18px;
     font-weight: bold;
-    padding: 8px 14px;
-    border-radius: 6px;
     transition: 0.3s;
 }
 
 nav a:hover {
-    background: #FF7043;
-    color: #FFFFFF;
-    box-shadow: 0 4px 12px rgba(255,112,67,0.5);
+    color: #FFB300;
 }
 
-/* CONTAINER */
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: auto;
-    padding: 30px 0;
+/* HERO */
+.hero {
+    position: relative;
+    background-size: cover;
+    background-position: center;
 }
 
-/* TITULOS */
-h2 {
-    color: #1A73E8;
-    font-size: 32px;
+.hero-overlay {
+    background: rgba(0,0,0,0.45);
+    padding: 50px 20px 120px 20px;
+}
+
+.hero-logo img {
+    height: 90px;
+    margin-left: 20px;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 900;
     margin-bottom: 10px;
+    color: white;
+    text-shadow: 0px 4px 10px rgba(0,0,0,0.5);
 }
 
-/* PARÁGRAFOS */
-p {
-    font-size: 18px;
-    line-height: 1.6;
+.hero-sub {
+    font-size: 22px;
+    color: white;
+    opacity: 0.95;
+    margin-bottom: 25px;
+    text-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
 
 /* BOTÕES */
 .btn {
     display: inline-block;
-    padding: 12px 22px;
-    background: #FF7043;
-    color: white;
-    border-radius: 8px;
+    padding: 14px 26px;
+    border-radius: 10px;
     font-size: 18px;
+    font-weight: bold;
     text-decoration: none;
     transition: 0.3s;
-    font-weight: bold;
+    color: white;
 }
 
 .btn:hover {
-    background: #FFB300;
-    color: #FFFFFF;
-    box-shadow: 0px 4px 12px rgba(255,179,0,0.5);
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 16px rgba(0,0,0,0.3);
+}
+
+/* CONTAINER PADRÃO */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 10px;
+}
+
+/* TÍTULOS */
+h2 {
+    color: #1A73E8;
+    font-size: 32px;
+    margin-bottom: 10px;
+    text-transform: none;
 }
 
 /* CARDS */
@@ -93,43 +117,47 @@ p {
     background: white;
     padding: 25px;
     border-radius: 14px;
-    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
-    margin-bottom: 25px;
+    box-shadow: 0px 4px 14px rgba(0,0,0,0.1);
     transition: 0.3s;
+    margin-bottom: 25px;
 }
 
 .card:hover {
     transform: translateY(-4px);
-    box-shadow: 0px 6px 18px rgba(0,0,0,0.15);
+    box-shadow: 0px 6px 22px rgba(0,0,0,0.18);
 }
 
-/* FOOTER */
+/* RODAPÉ */
 footer {
     background: #1A73E8;
+    color: white;
     text-align: center;
     padding: 25px;
-    color: white;
-    font-size: 16px;
     margin-top: 40px;
-    box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+    font-size: 16px;
 }
 
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
-    header h1 {
+    
+    nav img {
+        height: 45px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
+
+    .hero-title {
         font-size: 32px;
     }
 
-    nav a {
-        margin: 0 8px;
+    .hero-sub {
+        font-size: 18px;
+    }
+
+    .btn {
         font-size: 16px;
-    }
-
-    .container {
-        padding: 20px 0;
-    }
-
-    h2 {
-        font-size: 26px;
+        padding: 12px 22px;
     }
 }
