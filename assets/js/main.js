@@ -1,82 +1,54 @@
-/* -----------------------------
-   HERO CAROUSEL
------------------------------- */
-
-let currentSlide = 0;
-const slides = document.querySelectorAll(".hero-slide");
-const dotsContainer = document.getElementById("heroDots");
-
-/* Cria dots */
-slides.forEach((_, i) => {
-    const dot = document.createElement("span");
-    dot.dataset.slide = i;
-    dot.onclick = () => goToSlide(i);
-    dotsContainer.appendChild(dot);
-});
-
-const dots = dotsContainer.querySelectorAll("span");
-
-function goToSlide(n) {
-    slides[currentSlide].classList.remove("active");
-    dots[currentSlide].classList.remove("active");
-
-    currentSlide = n;
-
-    slides[currentSlide].classList.add("active");
-    dots[currentSlide].classList.add("active");
-}
-
-function nextSlide() {
-    let next = currentSlide + 1 >= slides.length ? 0 : currentSlide + 1;
-    goToSlide(next);
-}
-
-goToSlide(0);
-setInterval(nextSlide, 6000);
-
-/* -----------------------------
-   MOBILE MENU
------------------------------- */
+/* ============================================================
+   MENU MOBILE
+============================================================ */
 const mobileToggle = document.getElementById("mobileToggle");
 const mainNav = document.getElementById("mainNav");
 
 mobileToggle.addEventListener("click", () => {
-    mainNav.classList.toggle("show");
+  if (mainNav.style.display === "flex") {
+    mainNav.style.display = "none";
+  } else {
+    mainNav.style.display = "flex";
+    mainNav.style.flexDirection = "column";
+    mainNav.style.background = "#fff";
+    mainNav.style.padding = "20px";
+    mainNav.style.position = "absolute";
+    mainNav.style.top = "75px";
+    mainNav.style.right = "10px";
+    mainNav.style.boxShadow = "0 4px 12px rgba(0,0,0,0.1)";
+    mainNav.style.borderRadius = "10px";
+  }
 });
 
-/* -----------------------------
-   MODAL LOGIN
------------------------------- */
 
-const accountModal = document.getElementById("accountModal");
+/* ============================================================
+   MODAL DE LOGIN (ENTRAR / CRIAR CONTA)
+============================================================ */
 const openAccount = document.getElementById("openAccount");
+const accountModal = document.getElementById("accountModal");
 const closeAccount = document.getElementById("closeAccount");
 
-openAccount.onclick = () => {
-  accountModal.classList.remove("hidden");
-};
+if (openAccount) {
+  openAccount.addEventListener("click", () => {
+    accountModal.style.display = "flex";
+  });
+}
 
-closeAccount.onclick = () => {
-  accountModal.classList.add("hidden");
-};
+if (closeAccount) {
+  closeAccount.addEventListener("click", () => {
+    accountModal.style.display = "none";
+  });
+}
 
-/* -----------------------------
-   LAZYLOADING DAS OFERTAS
------------------------------- */
-const lazyImages = document.querySelectorAll("img[data-src]");
+/* Fechar ao clicar fora do conteúdo */
+window.addEventListener("click", (event) => {
+  if (event.target === accountModal) {
+    accountModal.style.display = "none";
+  }
+});
 
-const lazyLoad = (entry, observer) => {
-    if (entry.isIntersecting) {
-        const img = entry.target;
-        img.src = img.dataset.src;
-        observer.unobserve(img);
-    }
-};
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => lazyLoad(e, observer));
-}, { threshold: 0.25 });
-
-lazyImages.forEach(img => observer.observe(img));
-xy
-
+/* ============================================================
+   (OPCIONAL) – FUTURO CARROSSEL AUTOMÁTICO DO HERO
+============================================================ */
+/* habilitaremos depois – está preparado */
