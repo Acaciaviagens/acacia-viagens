@@ -1,353 +1,271 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Acácia Viagens — Conectando vc com o mundo em um só lugar</title>
-    <meta name="description" content="Pacotes, passagens, hotéis, tours e serviços — Acácia Viagens. Pacotes exclusivos para Europa, Brasil e destinos internacionais." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Acácia Viagens — Conectando vc com o mundo em um só lugar</title>
 
-    <!-- FONTS -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- CSS simples embutido (substitua por assets/css/style.css quando pronto) -->
-    <style>
-        :root{
-            --blue:#1A73E8;        /* inspirado no site base */
-            --gold:#FFC107;        /* dourado alegre */
-            --orange:#FF7043;      /* laranja energético */
-            --dark:#0F1D3A;        /* rodapé / contrast */
-            --muted:#6B7280;
-            --bg:#F6F8FA;
-            --card-bg:#FFFFFF;
-            --radius:14px;
-            --shadow: 0 8px 30px rgba(15,29,58,0.08);
-            font-family: 'Inter', Arial, sans-serif;
-            color: #0b1b33;
-        }
-        *{box-sizing:border-box}
-        body{margin:0;background:var(--bg);-webkit-font-smoothing:antialiased}
-        /* NAV */
-        nav{
-            position:fixed;top:0;left:0;right:0;z-index:60;
-            display:flex;align-items:center;gap:18px;
-            padding:14px 28px;background:linear-gradient(180deg, rgba(255,255,255,0.76), rgba(255,255,255,0.60));
-            backdrop-filter: blur(6px);box-shadow:0 6px 20px rgba(12,17,30,0.06);
-        }
-        nav .logo{display:flex;align-items:center;gap:12px}
-        nav img{height:56px}
-        nav .menu{margin-left:auto;display:flex;gap:10px;align-items:center}
-        nav .menu a{color:var(--dark);text-decoration:none;padding:8px 14px;border-radius:10px;font-weight:600}
-        nav .menu a.cta{background:var(--orange);color:#fff;box-shadow:0 6px 18px rgba(255,112,67,0.18)}
-        nav .menu a:hover{opacity:0.95;transform:translateY(-1px)}
-        /* HERO */
-        .hero{margin-top:84px;position:relative;overflow:hidden;border-bottom:6px solid var(--blue)}
-        .hero .carousel{display:grid;grid-template-columns:1fr;min-height:420px;position:relative}
-        .carousel-slide{
-            background-size:cover;background-position:center;
-            display:flex;align-items:center;padding:48px 24px;
-            transition:opacity .8s ease, transform .8s ease; position:absolute; inset:0;
-            opacity:0; transform:scale(1.03);
-        }
-        .carousel-slide.active{opacity:1; transform:scale(1); position:relative}
-        .hero-overlay{width:100%;max-width:1200px;margin:auto;display:flex;gap:30px;align-items:center}
-        .hero-left{flex:1;color:#fff;text-shadow:0 6px 22px rgba(0,0,0,0.45)}
-        .hero-left h1{font-size:44px;margin:0 0 12px;line-height:1.02;font-weight:800}
-        .hero-left p{font-size:18px;opacity:.95;margin:0 0 18px}
-        .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
-        .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700}
-        .btn.primary{background:linear-gradient(90deg,var(--orange),#ff8a5b);color:#fff}
-        .btn.alt{background:var(--gold);color:#0F1D3A}
-        .btn.ghost{background:rgba(255,255,255,0.14);color:#fff;border:1px solid rgba(255,255,255,0.12)}
-        /* hero card */
-        .hero-card{margin-top:20px;background:rgba(255,255,255,0.95);color:var(--dark);padding:18px;border-radius:12px;box-shadow:var(--shadow);max-width:420px}
-        .hero-card small{color:var(--muted);display:block;margin-bottom:8px}
-        .hero-card strong{display:block;font-size:20px;margin-top:8px}
-        /* controls */
-        .carousel-controls{position:absolute;right:18px;bottom:18px;display:flex;gap:8px;z-index:30}
-        .dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.6);cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.15)}
-        .dot.active{background:#fff}
-        /* CONTENT */
-        .container{max-width:1200px;margin:36px auto;padding:0 20px}
-        h2{color:var(--blue);font-size:28px;margin:6px 0 12px}
-        .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px}
-        .card{background:var(--card-bg);padding:18px;border-radius:12px;box-shadow:var(--shadow);transition:transform .25s ease}
-        .card:hover{transform:translateY(-8px)}
-        .card h3{margin:0 0 8px;color:var(--blue)}
-        .price{font-weight:800;color:var(--dark);margin-top:10px}
-        /* DESTINOS */
-        .destinos{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:20px}
-        .destino{position:relative;height:160px;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
-        .destino img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
-        .destino:hover img{transform:scale(1.06)}
-        .destino .label{position:absolute;left:12px;bottom:12px;background:linear-gradient(90deg,rgba(0,0,0,0.45),rgba(0,0,0,0.15));color:#fff;padding:8px 12px;border-radius:8px;font-weight:700}
-        /* SERVICES*/
-        .services{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-        .service{flex:1;min-width:140px;background:linear-gradient(180deg,#fff,#fff);padding:14px;border-radius:12px;text-align:center;border:1px solid #eef2ff}
-        .service small{display:block;color:var(--muted);margin-top:6px}
-        /* FOOTER */
-        footer{background:var(--dark);color:#fff;padding:36px 20px;margin-top:36px}
-        .footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:1200px;margin:auto}
-        .footer-grid a{color:#e0e7ff;text-decoration:none;display:block;margin:6px 0}
-        .footer-bottom{max-width:1200px;margin:22px auto 0;color:#9aa7d0;font-size:14px;text-align:center}
-        /* responsive */
-        @media (max-width:900px){
-            .hero-left h1{font-size:30px}
-            .hero-card{max-width:100%}
-            nav .menu{display:none}
-        }
-    </style>
+  <!-- Favicon (você pode gerar um .ico a partir de Logo.azul depois) -->
+  <link rel="icon" href="assets/img/Logo.azul.jpeg" type="image/jpeg">
+
+  <!-- Meta para redes sociais -->
+  <meta name="description" content="Acácia Viagens — pacotes, passagens, hotéis, cruzeiros e experiências. Conectando você ao mundo em um só lugar.">
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-    <div class="logo">
-        <a href="index.html"><img src="assets/img/logo.png" alt="Acácia Viagens"></a>
-        <div style="font-weight:800">
-            <div style="font-size:14px;color:var(--muted)">Acácia Viagens</div>
-            <div style="font-size:12px;color:var(--muted)">Conectando vc com o mundo em um só lugar</div>
-        </div>
-    </div>
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="nav-inner container">
+      <a class="brand" href="index.html">
+        <img src="assets/img/Logo.azul.jpeg" alt="Acácia Viagens" class="brand-logo">
+        <span class="brand-text">Acácia Viagens</span>
+      </a>
 
-    <div class="menu">
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html">Home</a>
         <a href="passagens.html">Passagens</a>
         <a href="hoteis.html">Hotéis</a>
-        <a href="passeios.html">Pacotes</a>
+        <a href="passeios.html">Passeios</a>
         <a href="consultoria.html">Consultoria</a>
         <a href="contato.html">Contato</a>
-        <a href="#" class="cta" id="open-login">Minha Conta</a>
+        <button class="btn btn-ghost" id="openAccount">Entrar</button>
+      </nav>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menu">
+        ☰
+      </button>
     </div>
-</nav>
+  </header>
 
-<!-- HERO -->
-<header class="hero" aria-hidden="false">
-    <div class="carousel" id="carousel">
-
-        <!-- slide 1 - Europa -->
-        <section class="carousel-slide active" style="background-image:url('https://images.unsplash.com/photo-1505765050662-6b8f4b27d36a?ixlib=rb-4.0.3&w=1600&q=80&auto=format&fit=crop');">
-            <div class="hero-overlay">
-                <div class="hero-left">
-                    <h1>Descubra a Europa em grande estilo</h1>
-                    <p>Pacotes VIP para Lisboa, Madrid e Paris — hotéis selecionados, city tours e suporte 24h.</p>
-                    <div class="hero-ctas">
-                        <a class="btn primary" href="passeios.html">🌍 Ver Pacotes Europeus</a>
-                        <a class="btn alt" href="consultoria.html">🛂 Consultoria Vistos</a>
-                    </div>
-
-                    <div class="hero-card" aria-hidden="false">
-                        <small>Pacote em destaque</small>
-                        <div style="font-weight:700">7 dias: Lisboa + Madrid</div>
-                        <strong>A partir de R$ 2.990</strong>
-                        <a href="passeios.html" class="btn" style="margin-top:12px;display:inline-block;background:var(--blue);color:#fff">Ver detalhes</a>
-                    </div>
-                </div>
+  <!-- HERO CAROUSEL -->
+  <section class="hero" id="hero">
+    <div class="hero-carousel">
+      <!-- Slide: Europa -->
+      <div class="hero-slide" style="background-image: url('https://br.pinterest.com/pin/18436679720021524/');">
+        <div class="overlay container">
+          <div class="hero-left">
+            <h1>Descubra a Europa com conforto e estilo</h1>
+            <p>Pacotes exclusivos: cidades históricas, gastronomia e experiências VIP.</p>
+            <div class="hero-cta">
+              <a href="passeios.html" class="btn btn-primary">Ver Pacotes Europa</a>
+              <a href="contato.html" class="btn btn-outline">Fale com um consultor</a>
             </div>
-        </section>
-
-        <!-- slide 2 - Praias Brasil -->
-        <section class="carousel-slide" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&w=1600&q=80&auto=format&fit=crop');">
-            <div class="hero-overlay">
-                <div class="hero-left">
-                    <h1>Praias paradisíacas do Brasil</h1>
-                    <p>Pacotes com pousadas charmosas, transfers e passeios locais. Experiências que cabem no seu bolso.</p>
-                    <div class="hero-ctas">
-                        <a class="btn primary" href="passeios.html">🏖️ Ver Pacotes Nacionais</a>
-                        <a class="btn ghost" href="contato.html">📞 Fale com a gente</a>
-                    </div>
-                </div>
+          </div>
+          <div class="hero-right">
+            <div class="hero-feature-card">
+              <h4>Pacote em Destaque</h4>
+              <p><strong>Lisboa + Madrid — 7 dias</strong><br>Hotel + city tours + assistência 24h</p>
+              <div class="price">A partir de <strong>R$ 2.990</strong></div>
+              <a class="btn btn-small" href="passeios.html">Ver Oferta</a>
             </div>
-        </section>
-
-        <!-- slide 3 - Aventura / Caribe -->
-        <section class="carousel-slide" style="background-image:url('https://images.unsplash.com/photo-1493558103817-58b2924bce98?ixlib=rb-4.0.3&w=1600&q=80&auto=format&fit=crop');">
-            <div class="hero-overlay">
-                <div class="hero-left">
-                    <h1>Ilhas, cruzeiros e destinos exóticos</h1>
-                    <p>Cruzeiros, Caribe e resorts all-inclusive. Reserve com segurança e assistência completa.</p>
-                    <div class="hero-ctas">
-                        <a class="btn primary" href="passeios.html">⛵ Pacotes & Cruzeiros</a>
-                        <a class="btn alt" href="chip.html">📶 eSIM & Chip</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- controls -->
-        <div class="carousel-controls" id="dots"></div>
-    </div>
-</header>
-
-<!-- MAIN -->
-<main>
-    <section class="container">
-        <h2>Planeje sua viagem com quem entende</h2>
-        <p>Oferecemos tudo em um só lugar: passagens, hotéis, pacotes personalizados, aluguel de carros, eSIM, transfers e suporte 24h.</p>
-
-        <!-- OFERTAS -->
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:16px;flex-wrap:wrap">
-            <div style="flex:1;min-width:280px">
-                <h3 style="margin:0 0 10px">Ofertas Imperdíveis</h3>
-                <div class="cards">
-                    <article class="card">
-                        <h3>Lisboa + Madrid — 7 dias</h3>
-                        <p>Hotéis 4★, city tour, traslados e suporte VIP.</p>
-                        <div class="price">R$ 2.990 • 7 dias</div>
-                    </article>
-
-                    <article class="card">
-                        <h3>Porto Seguro — 5 dias</h3>
-                        <p>Pousada com café da manhã, transfer e passeio de barco.</p>
-                        <div class="price">R$ 1.290 • 5 dias</div>
-                    </article>
-
-                    <article class="card">
-                        <h3>Cruzeiro Caribe — 6 noites</h3>
-                        <p>Tudo incluso: shows, piscinas e passeios em ilhas.</p>
-                        <div class="price">R$ 3.990 • 6 noites</div>
-                    </article>
-                </div>
-            </div>
-
-            <!-- SERVIÇOS RÁPIDOS -->
-            <aside style="width:340px;min-width:260px">
-                <div class="card" style="text-align:left">
-                    <h3>Serviços rápidos</h3>
-                    <div class="services">
-                        <div class="service">
-                            <div style="font-size:20px">✈</div>
-                            <div style="font-weight:700">Passagens</div>
-                            <small>Melhores tarifas</small>
-                        </div>
-                        <div class="service">
-                            <div style="font-size:20px">🏨</div>
-                            <div style="font-weight:700">Hotéis</div>
-                            <small>Reservas garantidas</small>
-                        </div>
-                        <div class="service">
-                            <div style="font-size:20px">📶</div>
-                            <div style="font-weight:700">eSIM</div>
-                            <small>Internet internacional</small>
-                        </div>
-                    </div>
-
-                    <div style="margin-top:12px">
-                        <a href="contato.html" class="btn primary" style="width:100%;justify-content:center">Solicitar Orçamento</a>
-                        <a href="consultoria.html" class="btn" style="width:100%;justify-content:center;margin-top:8px;background:var(--blue);color:#fff">Vistos & Consultoria</a>
-                    </div>
-                </div>
-            </aside>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <!-- DESTINOS -->
-    <section class="container" aria-label="Destinos populares">
-        <h2>Destinos populares</h2>
-        <div class="destinos">
-            <div class="destino"><img src="https://images.unsplash.com/photo-1505765050662-6b8f4b27d36a?ixlib=rb-4.0.3&w=800&q=60&auto=format&fit=crop" alt="Lisboa"><div class="label">Lisboa</div></div>
-            <div class="destino"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&w=800&q=60&auto=format&fit=crop" alt="Praia"><div class="label">Nordeste</div></div>
-            <div class="destino"><img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?ixlib=rb-4.0.3&w=800&q=60&auto=format&fit=crop" alt="Ilhas"><div class="label">Caribe</div></div>
-            <div class="destino"><img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?ixlib=rb-4.0.3&w=800&q=60&auto=format&fit=crop" alt="Paris"><div class="label">Europa</div></div>
+      <!-- Slide: Lisboa (uso iStock link) -->
+      <div class="hero-slide" style="background-image: url('https://media.istockphoto.com/id/2168287913/pt/foto/urban-travel-journey-in-europe-woman-on-lisbon-city-break.jpg?s=612x612&w=0&k=20&c=588320296');">
+        <div class="overlay container">
+          <div class="hero-left">
+            <h1>Explorar Lisboa — charme, história e sabores</h1>
+            <p>Roteiros personalizados com guias locais e experiências gastronômicas.</p>
+            <div class="hero-cta">
+              <a href="passeios.html" class="btn btn-primary">Pacotes Lisboa</a>
+              <a href="contato.html" class="btn btn-outline">Peça um orçamento</a>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <!-- WHY US -->
-    <section class="container" style="margin-top:28px">
-        <h2>Por que viajar com a Acácia?</h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:12px">
-            <div class="card">
-                <h3>Atendimento 24/7</h3>
-                <p>Suporte antes, durante e depois da sua viagem.</p>
+      <!-- Slide: Caribe -->
+      <div class="hero-slide" style="background-image: url('https://br.pinterest.com/pin/492649953169623/');">
+        <div class="overlay container">
+          <div class="hero-left">
+            <h1>Caribe — relax, festa e paraíso</h1>
+            <p>Resorts all-inclusive, festas à beira-mar e momentos inesquecíveis.</p>
+            <div class="hero-cta">
+              <a href="hoteis.html" class="btn btn-primary">Ver Caribe</a>
+              <a href="contato.html" class="btn btn-outline">Monte seu pacote</a>
             </div>
-            <div class="card">
-                <h3>Pacotes personalizáveis</h3>
-                <p>Monte sua viagem com serviços à la carte.</p>
-            </div>
-            <div class="card">
-                <h3>Pagamento facilitado</h3>
-                <p>Parcelamos em até x vezes conforme condições.</p>
-            </div>
-            <div class="card">
-                <h3>Confiança & experiência</h3>
-                <p>Extensão de uma marca com mais de 10 anos no mercado.</p>
-            </div>
+          </div>
         </div>
-    </section>
-</main>
+      </div>
 
-<!-- FOOTER -->
-<footer>
-    <div class="footer-grid">
-        <div>
-            <strong>Acácia Viagens</strong>
-            <p style="color:#b8c5e8;margin-top:8px">Conectando vc com o mundo em um só lugar — pacotes, passagens e serviços completos.</p>
-            <div style="margin-top:12px">
-                <a href="contato.html">Contato</a>
-                <a href="consultoria.html">Vistos & Consultoria</a>
-                <a href="passagens.html">Passagens</a>
+      <!-- Slide: Cruzeiro -->
+      <div class="hero-slide" style="background-image: url('https://br.pinterest.com/pin/844493674930312/');">
+        <div class="overlay container">
+          <div class="hero-left">
+            <h1>Cruzeiros premium</h1>
+            <p>Roteiros pelo Atlântico e Caribe com entretenimento e gastronomia a bordo.</p>
+            <div class="hero-cta">
+              <a href="passeios.html" class="btn btn-primary">Ver Cruzeiros</a>
             </div>
+          </div>
         </div>
+      </div>
 
-        <div>
-            <strong>Atendimento</strong>
-            <a href="https://wa.me/5583996916546" target="_blank">WhatsApp: (83) 99691-6546</a>
-            <a href="mailto:contato@acaciaviagens.com.br">contato@acaciaviagens.com.br</a>
-            <div style="margin-top:8px;color:#9aa7d0;font-size:13px">CEP / Endereço (opcional)</div>
-        </div>
     </div>
 
-    <div class="footer-bottom">
-        © 2025 Acácia Viagens — Todos os direitos reservados.
+    <!-- Controls -->
+    <div class="hero-controls container">
+      <div class="hero-dots" id="heroDots"></div>
     </div>
-</footer>
+  </section>
 
-<!-- SCRIPTS: carousel simples e modal/dash placeholder -->
-<script>
-    // Carousel básico (auto + dots)
-    (function(){
-        const slides = Array.from(document.querySelectorAll('.carousel-slide'));
-        const dotsWrap = document.getElementById('dots');
-        let idx = 0, t;
+  <!-- SEÇÃO SOBRE / SLOGAN -->
+  <section class="about container highlight-block">
+    <div class="about-inner">
+      <div>
+        <h2>Acácia Viagens — Conectando vc com o mundo em um só lugar</h2>
+        <p>Passagens, hotéis, pacotes, seguro viagem, cruzeiros, aluguel de veículos, eSIM e experiências personalizadas. Atendimento humano e tecnologia para simplificar sua viagem.</p>
+      </div>
+      <div class="about-quick">
+        <ul>
+          <li><strong>Atendimento 24/7</strong> via chatbot + suporte humano</li>
+          <li><strong>Parcelamento</strong> em até 12x (sujeito a condições)</li>
+          <li><strong>Pacotes VIP</strong> e apoio para vistos (parceria Acácia Cidadania)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-        function makeDots(){
-            slides.forEach((s,i)=>{
-                const d = document.createElement('div');
-                d.className='dot'+(i===0?' active':'');
-                d.dataset.i = i;
-                d.addEventListener('click', ()=>goTo(i));
-                dotsWrap.appendChild(d);
-            });
-        }
+  <!-- OFERTAS IMPERDÍVEIS (CARDS COM IMAGENS) -->
+  <section class="offers container">
+    <h2>Ofertas Imperdíveis</h2>
+    <div class="cards-grid">
+      <article class="card offer">
+        <img data-src="https://media.istockphoto.com/id/2168287913/pt/foto/urban-travel-journey-in-europe-woman-on-lisbon-city-break.jpg?s=612x612&w=0&k=20&c=588320296" alt="Lisboa — Oferta" class="card-img lazy">
+        <div class="card-body">
+          <h3>Lisboa & Madrid — 7 dias</h3>
+          <p>Hotel + city tours + transfers</p>
+          <div class="card-footer">
+            <span class="price">R$ 2.990</span>
+            <a href="passeios.html" class="btn btn-small">Comprar</a>
+          </div>
+        </div>
+      </article>
 
-        function goTo(i){
-            slides[idx].classList.remove('active');
-            dotsWrap.children[idx].classList.remove('active');
-            idx = i;
-            slides[idx].classList.add('active');
-            dotsWrap.children[idx].classList.add('active');
-            restart();
-        }
+      <article class="card offer">
+        <img data-src="https://br.pinterest.com/pin/18436679720021524/" alt="Europa — Oferta" class="card-img lazy">
+        <div class="card-body">
+          <h3>Europa Essencial — 10 dias</h3>
+          <p>Pacote multi-cidade com voos internos e hotel</p>
+          <div class="card-footer">
+            <span class="price">R$ 4.750</span>
+            <a href="passagens.html" class="btn btn-small">Comprar</a>
+          </div>
+        </div>
+      </article>
 
-        function next(){
-            goTo((idx+1)%slides.length);
-        }
+      <article class="card offer">
+        <img data-src="https://br.pinterest.com/pin/492649953169623/" alt="Caribe — Oferta" class="card-img lazy">
+        <div class="card-body">
+          <h3>Caribe All-Inclusive — 6 dias</h3>
+          <p>Resort + Traslados + Passeios</p>
+          <div class="card-footer">
+            <span class="price">R$ 3.350</span>
+            <a href="hoteis.html" class="btn btn-small">Comprar</a>
+          </div>
+        </div>
+      </article>
 
-        function restart(){
-            clearInterval(t);
-            t = setInterval(next,4500);
-        }
+      <article class="card offer">
+        <img data-src="https://br.pinterest.com/pin/844493674930312/" alt="Cruzeiro — Oferta" class="card-img lazy">
+        <div class="card-body">
+          <h3>Cruzeiro Caribe — 8 dias</h3>
+          <p>Cabine interna ou externa + entretenimento</p>
+          <div class="card-footer">
+            <span class="price">R$ 5.990</span>
+            <a href="passeios.html" class="btn btn-small">Comprar</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
 
-        if(slides.length){
-            makeDots();
-            restart();
-        }
-    })();
+  <!-- SERVIÇOS RÁPIDOS -->
+  <section class="services container">
+    <h2>Serviços Rápidos</h2>
+    <div class="services-grid">
+      <div class="service card">
+        <div class="icon">📱</div>
+        <h4>eSIM / Chip Internacional</h4>
+        <p>Internet rápida em mais de 80 países — conecte-se no embarque.</p>
+      </div>
+      <div class="service card">
+        <div class="icon">🚗</div>
+        <h4>Aluguel de Carros</h4>
+        <p>Retirada em aeroporto e devolução flexível.</p>
+      </div>
+      <div class="service card">
+        <div class="icon">🏡</div>
+        <h4>Aluguel de Casas & Pousadas</h4>
+        <p>Seleção verificada com avaliações e cancelamento flexível.</p>
+      </div>
+      <div class="service card">
+        <div class="icon">🛡️</div>
+        <h4>Seguro Viagem</h4>
+        <p>Cobertura completa e assistência 24h.</p>
+      </div>
+    </div>
+  </section>
 
-    // Placeholder: abrir modal/login (simples)
-    document.getElementById('open-login').addEventListener('click', function(e){
-        e.preventDefault();
-        alert('Área do cliente: Em desenvolvimento. Nas próximas etapas vamos integrar login, dashboard e histórico de compras (Firebase / Supabase).');
-    });
-</script>
+  <!-- CTA -->
+  <section class="cta container dark-block">
+    <h2>Pronto para sua próxima viagem?</h2>
+    <p>Fale com um consultor, monte um pacote ou reserve agora mesmo. Atendimento via chat 24/7 e suporte humano.</p>
+    <a href="contato.html" class="btn btn-cta">Solicitar Orçamento</a>
+  </section>
 
+  <!-- RODAPÉ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="assets/img/Logo.azul.jpeg" alt="Acácia Viagens" class="footer-logo">
+        <p>Acácia Viagens — Conectando vc com o mundo em um só lugar</p>
+        <small>Parceria &amp; expertise Acácia Cidadania (10+ anos)</small>
+      </div>
+
+      <div>
+        <h4>Contato</h4>
+        <a href="https://wa.me/5583996916546" target="_blank">WhatsApp: (83) 99691-6546</a><br>
+        <a href="mailto:contato@acaciaviagens.com.br">contato@acaciaviagens.com.br</a>
+      </div>
+
+      <div>
+        <h4>Navegação</h4>
+        <a href="passagens.html">Passagens</a><br>
+        <a href="hoteis.html">Hotéis</a><br>
+        <a href="passeios.html">Passeios</a><br>
+        <a href="consultoria.html">Consultoria</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom container">
+      © 2025 Acácia Viagens — Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <!-- ACCOUNT MODAL (simples) -->
+  <div id="accountModal" class="modal">
+    <div class="modal-inner">
+      <button class="modal-close" id="closeAccount">✕</button>
+      <h3>Entrar na sua conta</h3>
+      <form id="loginForm">
+        <label>Email<input type="email" name="email" required></label>
+        <label>Senha<input type="password" name="password" required></label>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">Entrar</button>
+          <button type="button" class="btn btn-outline" id="createAccount">Criar conta</button>
+        </div>
+      </form>
+      <p class="muted">Ao criar conta, você poderá ver suas compras, vouchers e documentos.</p>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
