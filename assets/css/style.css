@@ -372,34 +372,18 @@ html, body {
   opacity: 0.8;
 }
 
-/* -------- MODAL -------- */
-
-.modal {
+/* Marca d’água suave da logo */
+body::before {
+  content: "";
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.6);
-  display: none;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal.show {
-  display: flex;
-}
-
-.modal-inner {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  width: 350px;
-}
-
-.modal-close {
-  float: right;
-  background: none;
-  border: none;
-  font-size: 22px;
-  cursor: pointer;
+  background-image: url("../img/logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 35%;
+  opacity: 0.08;        /* bem suave */
+  z-index: -1;
+  pointer-events: none; /* não interfere no site */
 }
 
 /* -------- MOBILE -------- */
