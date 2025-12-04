@@ -48,18 +48,13 @@ mobileToggle.addEventListener("click", () => {
    MODAL LOGIN
 ------------------------------ */
 
-const modal = document.getElementById("accountModal");
-const openAccount = document.getElementById("openAccount");
-const closeAccount = document.getElementById("closeAccount");
+openAccount.onclick = () => {
+  accountModal.classList.remove("hidden");
+};
 
-openAccount.addEventListener("click", () => modal.classList.add("show"));
-
-closeAccount.addEventListener("click", () => modal.classList.remove("show"));
-
-/* Fechar clicando fora */
-modal.addEventListener("click", (e) => {
-    if (e.target === modal) modal.classList.remove("show");
-});
+closeAccount.onclick = () => {
+  accountModal.classList.add("hidden");
+};
 
 /* -----------------------------
    LAZYLOADING DAS OFERTAS

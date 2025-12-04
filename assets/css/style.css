@@ -343,16 +343,11 @@ html, body {
 
 /* -------- FOOTER -------- */
 
-.site-footer {
-  background: #0B2A4A;
-  color: #fff;
-  padding: 40px 20px;
-  margin-top: 40px;
-  background-image: url('../img/logo.png');
-  background-size: 250px;
-  background-repeat: no-repeat;
-  background-position: right -40px bottom -40px;
-  opacity: 0.98;
+.site-footer img {
+  width: 120px;
+  height: auto;
+  opacity: 1 !important;
+  display: block;
 }
 
 .footer-grid {
@@ -372,19 +367,6 @@ html, body {
   opacity: 0.8;
 }
 
-/* Marca d’água suave da logo */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("../img/logo.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 35%;
-  opacity: 0.08;        /* bem suave */
-  z-index: -1;
-  pointer-events: none; /* não interfere no site */
-}
 
 /* -------- MOBILE -------- */
 
