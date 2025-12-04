@@ -48,6 +48,10 @@ mobileToggle.addEventListener("click", () => {
    MODAL LOGIN
 ------------------------------ */
 
+const accountModal = document.getElementById("accountModal");
+const openAccount = document.getElementById("openAccount");
+const closeAccount = document.getElementById("closeAccount");
+
 openAccount.onclick = () => {
   accountModal.classList.remove("hidden");
 };

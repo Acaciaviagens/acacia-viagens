@@ -429,3 +429,10 @@ html, body {
     display: none;
   }
 }
+/* DESATIVANDO MARCA D’ÁGUA DEFINITIVAMENTE */
+.watermark {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none;
+}

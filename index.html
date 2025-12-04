@@ -266,34 +266,29 @@
 
   </footer>
 
-  <!-- MODAL -->
-<div id="accountModal" class="modal hidden">    <div class="modal-inner">
-      <button class="modal-close" id="closeAccount">✕</button>
-      <h3>Entrar na sua conta</h3>
+<!-- ACCOUNT MODAL (aparece somente quando clicar no botão) -->
+<div id="accountModal" class="modal hidden">
+  <div class="modal-inner">
+    <button class="modal-close" id="closeAccount">✕</button>
+    <h3>Entrar na sua conta</h3>
 
-      <form id="loginForm">
-        <label>Email<br>
-          <input type="email" name="email" required>
-        </label>
+    <form id="loginForm">
+      <label>Email
+        <input type="email" name="email" required>
+      </label>
 
-        <label>Senha<br>
-          <input type="password" name="password" required>
-        </label>
+      <label>Senha
+        <input type="password" name="password" required>
+      </label>
 
-        <div class="modal-actions">
-          <button type="submit" class="btn btn-primary">Entrar</button>
-          <button type="button" class="btn btn-outline" id="createAccount">Criar Conta</button>
-        </div>
-      </form>
+      <div class="modal-actions">
+        <button type="submit" class="btn btn-primary">Entrar</button>
+        <button type="button" class="btn btn-outline" id="createAccount">Criar Conta</button>
+      </div>
+    </form>
 
-      <p class="muted">
-        Ao criar uma conta, você poderá visualizar suas compras, documentos, vouchers e muito mais.
-      </p>
-    </div>
+    <p class="muted">
+      Ao criar conta, você poderá visualizar suas compras, vouchers e muito mais.
+    </p>
   </div>
-
-  <!-- JS -->
-  <script src="assets/js/main.js"></script>
-
-</body>
-</html>
+</div>
