@@ -140,9 +140,12 @@
   text-decoration: none;
 }
 
-.footer {
-  background: #0b2a4a;
-  color: white;
+.call-to-action {
+  background: #0c2340;
+  padding: 40px 20px;   /* <<< ALTURA REDUZIDA AQUI */
+  min-height: 180px;   /* <<< IMPEDE FICAR GIGANTE */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 30px;
 }
