@@ -202,3 +202,9 @@
   transform: translateY(-3px);
   box-shadow: 0 15px 35px rgba(255, 183, 3, 0.55);
 }
+.hero {
+  background-image: url("assets/img/home-europa.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
