@@ -141,10 +141,11 @@
 }
 
 .call-to-action {
-  background: #0c2340;
-  padding: 40px 20px;   /* <<< ALTURA REDUZIDA AQUI */
-  min-height: 180px;   /* <<< IMPEDE FICAR GIGANTE */
+  background-color: #0c2340;
+  padding: 30px 20px;      /* <<<< ALTURA AJUSTADA AQUI */
+  min-height: 140px;      /* <<<< IMPEDE FICAR GIGANTE */
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
