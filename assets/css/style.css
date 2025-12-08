@@ -45,23 +45,13 @@
 }
 
 .hero {
-  height: 450px;
+  background-image: url("assets/img/europa.jpg");
   background-size: cover;
   background-position: center;
+  height: 420px;
+  position: relative;
   display: flex;
   align-items: center;
-  padding-left: 60px;
-}
-
-.hero-content {
-  background: rgba(0,0,0,0.5);
-  padding: 30px;
-  border-radius: 12px;
-  color: white;
-}
-
-.hero-buttons {
-  margin-top: 20px;
 }
 
 .btn-primary {
