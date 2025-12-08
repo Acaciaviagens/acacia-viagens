@@ -44,15 +44,36 @@ nav a {
 }
 
 /* ✅ HERO FUNCIONAL COM IMAGEM */
-.hero {
-  height: 420px;
-  background-size: cover;
-  background-position: center;
+.hero-img {
   position: relative;
-  display: flex;
-  align-items: center;
-  padding: 40px;
-  background-color: #777; /* fallback cinza só se a imagem não carregar */
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  color: #fff;
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 18px;
 }
 
 /* OFERTAS */
