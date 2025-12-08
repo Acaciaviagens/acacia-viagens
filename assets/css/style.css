@@ -163,3 +163,10 @@
   justify-content: center;
   text-align: center;
 }
+/* ===== FORÇAR TEXTO BRANCO NA FAIXA AZUL ===== */
+.call-to-action,
+.call-to-action p,
+.call-to-action span,
+.call-to-action h2 {
+  color: #ffffff !important;
+}
