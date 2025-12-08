@@ -46,6 +46,7 @@ nav a {
 /* ✅ HERO FUNCIONAL COM IMAGEM */
 .hero {
   height: 420px;
+  background-image: url("../img/europa.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -158,5 +159,6 @@ footer {
 footer img {
   height: 60px;
   margin-bottom: 10px;
+}
 }
 
