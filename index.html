@@ -1,162 +1,19 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Acácia Viagens</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <style>
-    body { margin: 0; font-family: Arial, sans-serif; }
-
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: #fff;
-      padding: 15px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,.1);
-      z-index: 1000;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo img {
-      height: 40px;
-    }
-
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #000;
-      font-weight: 600;
-    }
-
-    .login-btn {
-      background: #1f5fff;
-      color: white;
-      padding: 10px 18px;
-      border-radius: 8px;
-      text-decoration: none;
-    }
-
-    .hero {
-      margin-top: 90px;
-      height: 520px;
-      background: url("assets/img/europa.jpg") center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      padding: 80px;
-      color: white;
-      position: relative;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.55);
-    }
-
-    .hero-content {
-      position: relative;
-      max-width: 600px;
-    }
-
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      line-height: 1.4;
-    }
-
-    section {
-      padding: 80px 60px;
-      background: #f7f9fb;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,.12);
-      overflow: hidden;
-    }
-
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .card-content {
-      padding: 20px;
-    }
-
-    .price {
-      color: #1f5fff;
-      font-weight: bold;
-      font-size: 20px;
-      margin: 10px 0;
-    }
-
-    .buy-btn {
-      display: inline-block;
-      background: #1f5fff;
-      color: white;
-      padding: 10px 18px;
-      border-radius: 10px;
-      text-decoration: none;
-      margin-top: 10px;
-    }
-
-    .cta {
-      background: #0b2447;
-      color: white;
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    .cta p {
-      color: white;
-      font-size: 18px;
-      margin-bottom: 14px;
-    }
-
-    footer {
-      background: #0b2447;
-      color: white;
-      text-align: center;
-      padding: 40px 20px 25px;
-    }
-
-    footer img {
-      width: 70px;
-      margin-bottom: 15px;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<header>
-  <div class="logo">
-    <img src="assets/img/logo.png" />
+<header class="top-nav">
+  <div class="logo-area">
+    <img src="assets/img/logo.png" alt="Acácia Viagens">
     <strong>Acácia Viagens</strong>
   </div>
+
   <nav>
     <a href="#">Home</a>
     <a href="#">Passagens</a>
@@ -165,78 +22,66 @@
     <a href="#">Consultoria</a>
     <a href="#">Contato</a>
   </nav>
-  <a href="#" class="login-btn">Entrar / Criar Conta</a>
+
+  <a class="btn-entrar" href="#">Entrar / Criar Conta</a>
 </header>
 
+<!-- ✅ HERO CORRETO -->
 <section class="hero">
-
-  <div class="hero-content container">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
     <h1>Explore o mundo com quem entende de viagens</h1>
-    <p>
-      Pacotes completos, passagens, hotéis, cruzeiros e experiências personalizadas.
-    </p>
+    <p>Pacotes completos, passagens, hotéis, cruzeiros e experiências personalizadas.</p>
   </div>
 </section>
 
-<section>
+<section class="ofertas">
   <h2>Ofertas Imperdíveis</h2>
+
   <div class="cards">
 
     <div class="card">
-      <img src="assets/img/lisboa.jpg">
-      <div class="card-content">
-        <h3>Itália Romântica</h3>
-        <p>9 dias | Roma + Veneza</p>
-        <div class="price">R$ 4.600</div>
-        <a class="buy-btn">Comprar</a>
-      </div>
+      <img src="assets/img/italia.jpg" alt="Itália">
+      <h3>Itália Romântica</h3>
+      <p>9 dias | Roma + Veneza</p>
+      <span>R$ 4.600</span>
+      <button>Comprar</button>
     </div>
 
     <div class="card">
-      <img src="assets/img/europa.jpg">
-      <div class="card-content">
-        <h3>Europa Essencial</h3>
-        <p>10 dias | Multi-cidades</p>
-        <div class="price">R$ 4.750</div>
-        <a class="buy-btn">Comprar</a>
-      </div>
+      <img src="assets/img/europa.jpg" alt="Europa">
+      <h3>Europa Essencial</h3>
+      <p>10 dias | Multi-cidades</p>
+      <span>R$ 4.750</span>
+      <button>Comprar</button>
     </div>
 
     <div class="card">
-      <img src="assets/img/caribe.jpg">
-      <div class="card-content">
-        <h3>Punta Cana Premium</h3>
-        <p>7 dias | All Inclusive</p>
-        <div class="price">R$ 3.890</div>
-        <a class="buy-btn">Comprar</a>
-      </div>
+      <img src="assets/img/caribe.jpg" alt="Caribe">
+      <h3>Punta Cana Premium</h3>
+      <p>7 dias | All Inclusive</p>
+      <span>R$ 3.890</span>
+      <button>Comprar</button>
     </div>
 
     <div class="card">
-      <img src="assets/img/cruzeiro.jpg">
-      <div class="card-content">
-        <h3>Cruzeiro Europa</h3>
-        <p>12 dias | Mediterrâneo</p>
-        <div class="price">R$ 7.300</div>
-        <a class="buy-btn">Comprar</a>
-      </div>
+      <img src="assets/img/cruzeiro.jpg" alt="Cruzeiro">
+      <h3>Cruzeiro Europa</h3>
+      <p>12 dias | Mediterrâneo</p>
+      <span>R$ 7.300</span>
+      <button>Comprar</button>
     </div>
 
   </div>
 </section>
 
-<section class="cta-final">
-  <div class="cta-container">
-    <p>Fale agora com um consultor especializado.</p>
-
-    <a href="contato.html" class="cta-btn">
-      Solicitar Orçamento
-    </a>
-  </div>
+<section class="cta">
+  <p>Fale agora com um consultor especializado.</p>
+  <button class="btn-destaque">Solicitar Orçamento</button>
 </section>
 
 <footer>
-  <img src="assets/img/logo.png">
+  <img src="assets/img/logo.png" alt="">
   <p>Acácia Viagens — Conectando você ao mundo</p>
   <p>WhatsApp: (83) 99691-6546</p>
   <p>contato@acaciaviagens.com.br</p>
