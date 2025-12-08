@@ -170,3 +170,8 @@
 .call-to-action h2 {
   color: #ffffff !important;
 }
+/* FORÇANDO TEXTO BRANCO NA FRASE DO CTA */
+#cta-text {
+  color: #ffffff !important;
+  font-weight: 500;
+}
