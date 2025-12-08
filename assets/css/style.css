@@ -150,3 +150,16 @@
   justify-content: center;
   text-align: center;
 }
+
+.call-to-action,
+.cta,
+.section-cta {
+  padding: 25px 15px !important;
+  min-height: auto !important;
+  height: auto !important;
+  max-height: 160px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
