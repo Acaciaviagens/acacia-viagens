@@ -1,110 +1,100 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Acácia Viagens</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/css/style.css">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/css/style.css" />
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #f6f7fb;
-    }
+    body { margin: 0; font-family: Arial, sans-serif; }
 
-    /* HEADER */
     header {
-      position: sticky;
+      position: fixed;
       top: 0;
-      background: white;
-      height: 80px;
+      width: 100%;
+      background: #fff;
+      padding: 15px 40px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 0 50px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,.1);
       z-index: 1000;
     }
 
     .logo {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
     .logo img {
-      width: 55px;
-      height: auto;
+      height: 40px;
     }
 
     nav a {
       margin: 0 15px;
       text-decoration: none;
-      font-weight: bold;
-      color: #0c2340;
+      color: #000;
+      font-weight: 600;
     }
 
-    .btn-login {
-      background: #1e6bff;
+    .login-btn {
+      background: #1f5fff;
       color: white;
       padding: 10px 18px;
-      border-radius: 10px;
+      border-radius: 8px;
       text-decoration: none;
-      font-weight: bold;
     }
 
-    /* HERO */
-<section class="hero" style="background-image: url('assets/img/hero-europa.jpg');">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <h1>Explore o mundo com quem entende de viagens</h1>
-    <p>
-      Pacotes completos, passagens, hotéis, cruzeiros e experiências personalizadas.
-    </p>
-  </div>
-</section>
-
-    .btn-primary {
-      background: #1e6bff;
+    .hero {
+      margin-top: 90px;
+      height: 520px;
+      background: url("assets/img/europa.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding: 80px;
       color: white;
+      position: relative;
     }
 
-    .btn-outline {
-      border: 2px solid white;
-      color: white;
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
     }
 
-    /* SEÇÕES */
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 60px 20px;
+    .hero-content {
+      position: relative;
+      max-width: 600px;
     }
 
-    h2 {
-      text-align: center;
-      margin-bottom: 40px;
-      color: #0c2340;
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
     }
 
-    /* PACOTES */
+    .hero p {
+      font-size: 18px;
+      line-height: 1.4;
+    }
+
+    section {
+      padding: 80px 60px;
+      background: #f7f9fb;
+    }
+
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
     }
 
     .card {
       background: white;
-      border-radius: 15px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.12);
       overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
     }
 
     .card img {
@@ -113,69 +103,60 @@
       object-fit: cover;
     }
 
-    .card-body {
+    .card-content {
       padding: 20px;
     }
 
     .price {
-      color: #1e6bff;
-      font-size: 20px;
+      color: #1f5fff;
       font-weight: bold;
+      font-size: 20px;
       margin: 10px 0;
     }
 
-    .card a {
+    .buy-btn {
       display: inline-block;
-      background: #1e6bff;
+      background: #1f5fff;
       color: white;
       padding: 10px 18px;
-      border-radius: 8px;
+      border-radius: 10px;
       text-decoration: none;
       margin-top: 10px;
     }
 
-    /* CTA */
     .cta {
-      background: #0c2340;
+      background: #0b2447;
       color: white;
       text-align: center;
-      padding: 70px 20px;
+      padding: 50px 20px;
     }
 
-    .cta a {
-      background: #1e6bff;
+    .cta p {
       color: white;
-      padding: 14px 28px;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 10px;
-      display: inline-block;
-      margin-top: 20px;
+      font-size: 18px;
+      margin-bottom: 14px;
     }
 
-    /* RODAPÉ */
     footer {
-      background: #0c2340;
+      background: #0b2447;
       color: white;
-      padding: 35px;
       text-align: center;
+      padding: 40px 20px 25px;
     }
 
     footer img {
-      width: 90px;
-      margin-bottom: 10px;
+      width: 70px;
+      margin-bottom: 15px;
     }
   </style>
 </head>
-
 <body>
 
 <header>
   <div class="logo">
-    <img src="assets/img/logo.png">
+    <img src="assets/img/logo.png" />
     <strong>Acácia Viagens</strong>
   </div>
-
   <nav>
     <a href="#">Home</a>
     <a href="#">Passagens</a>
@@ -184,115 +165,66 @@
     <a href="#">Consultoria</a>
     <a href="#">Contato</a>
   </nav>
-
-  <a class="btn-login" href="#">Entrar / Criar Conta</a>
+  <a href="#" class="login-btn">Entrar / Criar Conta</a>
 </header>
 
 <section class="hero">
-  <h1>Explore o mundo com quem entende de viagens</h1>
-  <p>Pacotes completos, passagens, hotéis, cruzeiros e experiências personalizadas.</p>
-
-  <div class="hero-buttons">
-    <a class="btn-primary" href="#">Ver Roteiros</a>
-    <a class="btn-outline" href="#">Pedir Orçamento</a>
+  <div class="hero-content">
+    <h1>Explore o mundo com quem entende de viagens</h1>
+    <p>Pacotes completos, passagens, hotéis, cruzeiros e experiências personalizadas.</p>
   </div>
 </section>
 
-<section class="container">
+<section>
   <h2>Ofertas Imperdíveis</h2>
-
   <div class="cards">
+
     <div class="card">
       <img src="assets/img/lisboa.jpg">
-      <div class="card-body">
-        <h3>Lisboa + Madrid</h3>
-        <p>7 dias | Hotel + Tours</p>
-        <div class="price">R$ 2.990</div>
-        <a href="#">Comprar</a>
-      </div>
-    </div>
-
-    <div class="card">
-<img src="assets/img/europa-castelo.jpg" alt="Europa Essencial">      <div class="card-body">
-        <h3>Europa </h3>
-        <p>10 dias | Multi-cidades</p>
-        <div class="price">R$ 4.750</div>
-        <a href="#">Comprar</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="assets/img/caribe.jpg">
-      <div class="card-body">
-        <h3>Caribe All Inclusive</h3>
-        <p>6 dias | Resort completo</p>
-        <div class="price">R$ 3.350</div>
-        <a href="#">Comprar</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="assets/img/cruzeiro.jpg">
-      <div class="card-body">
-        <h3>Cruzeiro Caribe</h3>
-        <p>8 dias | Cabine completa</p>
-        <div class="price">R$ 5.990</div>
-        <a href="#">Comprar</a>
-      </div>
-    </div>
-
-    <div class="card">
-<img src="assets/img/italia-ponto-turistico.jpg" alt="Itália Romântica">      <div class="card-body">
-        <h3>Itália </h3>
+      <div class="card-content">
+        <h3>Itália Romântica</h3>
         <p>9 dias | Roma + Veneza</p>
         <div class="price">R$ 4.600</div>
-        <a href="#">Comprar</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="assets/img/caribe.jpg">
-      <div class="card-body">
-        <h3>Punta Cana Premium</h3>
-        <p>7 dias | All Inclusive</p>
-        <div class="price">R$ 3.890</div>
-        <a href="#">Comprar</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="assets/img/cruzeiro.jpg">
-      <div class="card-body">
-        <h3>Cruzeiro Europa</h3>
-        <p>12 dias | Mediterrâneo</p>
-        <div class="price">R$ 7.300</div>
-        <a href="#">Comprar</a>
+        <a class="buy-btn">Comprar</a>
       </div>
     </div>
 
     <div class="card">
       <img src="assets/img/europa.jpg">
-      <div class="card-body">
-        <h3>Paris + Londres</h3>
-        <p>8 dias | Hotel + Passeios</p>
-        <div class="price">R$ 5.120</div>
-        <a href="#">Comprar</a>
+      <div class="card-content">
+        <h3>Europa Essencial</h3>
+        <p>10 dias | Multi-cidades</p>
+        <div class="price">R$ 4.750</div>
+        <a class="buy-btn">Comprar</a>
       </div>
     </div>
+
+    <div class="card">
+      <img src="assets/img/caribe.jpg">
+      <div class="card-content">
+        <h3>Punta Cana Premium</h3>
+        <p>7 dias | All Inclusive</p>
+        <div class="price">R$ 3.890</div>
+        <a class="buy-btn">Comprar</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="assets/img/cruzeiro.jpg">
+      <div class="card-content">
+        <h3>Cruzeiro Europa</h3>
+        <p>12 dias | Mediterrâneo</p>
+        <div class="price">R$ 7.300</div>
+        <a class="buy-btn">Comprar</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<section class="call-to-action" style="background:#0b2545; padding: 24px 0;">
-  <div style="max-width: 1200px; margin: auto; text-align: center;">
-
-    <p style="margin-bottom: 12px; font-size: 16px; color: #ffffff;">
-<p id="cta-text">Fale agora com um consultor especializado.</p>    </p>
-
-    <div>
-      <a href="#contato" class="btn btn-primary">Solicitar Orçamento</a>
-    </div>
-
-  </div>
+<section class="cta">
+  <p>Fale agora com um consultor especializado.</p>
+  <a class="buy-btn">Solicitar Orçamento</a>
 </section>
 
 <footer>
@@ -305,4 +237,3 @@
 
 </body>
 </html>
-
