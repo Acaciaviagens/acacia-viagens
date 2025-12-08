@@ -208,3 +208,9 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+.hero {
+  background-image: url("assets/img/home-europa.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
